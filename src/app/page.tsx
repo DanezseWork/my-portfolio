@@ -232,9 +232,9 @@ useEffect(() => {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.test
+                I&apos;m currently looking for new opportunities, my inbox is
+                always open. Whether you have a question or just want to say hi,
+                I&apos;ll try my best to get back to you!
               </p>
             </div>
           </BlurFade>
