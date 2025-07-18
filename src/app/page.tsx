@@ -13,6 +13,20 @@ import Markdown from "react-markdown";
 
 import { useEffect, useState } from "react";
 
+const styledDescription = DATA.description
+  .replace(
+    "Frontend Developer",
+    `<span class='text-blue-600 font-semibold'>Frontend Developer</span>`
+  )
+  .replace(
+    "responsive UIs",
+    `<span class='text-green-600 font-semibold'>responsive UIs</span>`
+  )
+  .replace(
+    "Laravel-based systems",
+    `<span class='text-purple-600 font-semibold'>Laravel-based systems</span>`
+  );
+
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -33,28 +47,31 @@ useEffect(() => {
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
-<div className="flex items-center gap-2">
-  <BlurFadeText
-    delay={BLUR_FADE_DELAY}
-    className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-    yOffset={8}
-    text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
-  />
-  {showEmoji && (
-  <span
-    className="inline-block text-5xl leading-none animate-wave origin-[70%_70%]"
-  >
-    👋
-  </span>
-)}
-
-</div>
-
-              <BlurFadeText
+              <div className="flex items-center gap-2">
+                <BlurFadeText
+                  delay={BLUR_FADE_DELAY}
+                  className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                  yOffset={8}
+                  text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
+                />
+                {showEmoji && (
+                  <span
+                    className="inline-block text-5xl leading-none animate-wave origin-[70%_70%]"
+                  >
+                    👋
+                  </span>
+                )}
+              </div>
+              {/* <BlurFadeText
                 className="max-w-[600px] md:text-xl"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
+              /> */}
+              <BlurFadeText
+                html={styledDescription}
+                className="text-neutral-700 text-base"
               />
+
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
