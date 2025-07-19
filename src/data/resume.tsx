@@ -91,8 +91,16 @@ export const DATA = {
       href: "http://www.sct.edu.ph/",
       degree: "BSBA Major in Management",
       logoUrl: "/sct.png",
-      start: "2022",
-      end: "2021",
+      start: "2021",
+      end: "2022",
+    },
+    {
+      school: "San Beda University",
+      href: "https://www.sanbeda.edu.ph/",
+      degree: "Senior High School - Science, Technology, Engineering, and Mathematics(STEM)", 
+      logoUrl: "/sbu.jpg",
+      start: "2018",
+      end: "2020",
     },
   ],
   projects: [

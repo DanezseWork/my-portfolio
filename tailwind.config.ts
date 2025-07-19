@@ -87,7 +87,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        wave: 'wave 1.5s ease-in-out infinite',
+        wave: 'wave 2s ease-in-out infinite',
       },
     },
   },
