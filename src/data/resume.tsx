@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Frontend Developer skilled in building responsive UIs and integrating with Laravel-based systems.",
   summary:
-    "I’m a frontend web developer with experience building responsive and functional web interfaces using React, Tailwind CSS, and Laravel. I’ve worked on a range of internal and client-facing applications, including platforms for food delivery, employee management, and task tracking — all while maintaining clean UI architecture and collaborating closely with backend teams. I’m focused on usability, performance, and maintainability, and I enjoy learning new technologies that improve workflow and user experience.",
+    "Frontend web developer skilled in React, Tailwind CSS, and Laravel. I build responsive, user-focused interfaces for apps like food delivery, employee management, and task tracking. Strong in clean UI, collaboration with backend teams, and improving performance and usability.",
   avatarUrl: "/me.png",
   skills: [
     "React",

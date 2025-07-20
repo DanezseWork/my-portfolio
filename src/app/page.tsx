@@ -16,17 +16,16 @@ import { useEffect, useState } from "react";
 const styledDescription = DATA.description
   .replace(
     "Frontend Developer",
-    `<span class='text-blue-600 font-semibold'>Frontend Developer</span>`
+    `<span class='text-blue-600 font-semibold shine'>Frontend Developer</span>`
   )
   .replace(
     "responsive UIs",
-    `<span class='text-green-600 font-semibold'>responsive UIs</span>`
+    `<span class='text-green-600 font-semibold shine'>responsive UIs</span>`
   )
   .replace(
     "Laravel-based systems",
-    `<span class='text-purple-600 font-semibold'>Laravel-based systems</span>`
+    `<span class='text-purple-600 font-semibold shine'>Laravel-based systems</span>`
   );
-
 
 const BLUR_FADE_DELAY = 0.04;
 
