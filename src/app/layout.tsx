@@ -7,6 +7,8 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import TechLinesBackground from "@/components/TechLinesBackground";
+import ParticlesWrapper from "@/components/ParticlesWrapper"; 
+import PreloaderWrapper from "@/components/PreloaderWrapper";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -16,7 +18,7 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: DATA.name,
+    default: 'Dan Portfolio',
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
@@ -58,18 +60,23 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "relative min-h-screen bg-background font-sans antialiased overflow-x-hidden",
           fontSans.variable
         )}
       >
-        <TechLinesBackground />
-        <ThemeProvider attribute="class" defaultTheme="light">
+        {/* <TechLinesBackground /> */}
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
+            <PreloaderWrapper />
+            <ParticlesWrapper />
             {children}
             <Navbar />
           </TooltipProvider>
+
         </ThemeProvider>
+           
       </body>
+   
     </html>
   );
 }
