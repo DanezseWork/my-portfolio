@@ -41,7 +41,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <main className="flex flex-col min-h-[100dvh] max-w-[700px] py-10 mx-auto space-y-10">
+    <main className="flex flex-col min-h-[100dvh] max-w-[700px] py-20 px-10 mx-auto space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
