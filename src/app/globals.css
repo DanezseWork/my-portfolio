@@ -143,4 +143,52 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
   width: 3rem;
 }
 
+/* globals.css */
+/* globals.css */
+.minecraft-glass {
+  @apply backdrop-blur-sm border-l border-r border-white/30 shadow-sm relative overflow-hidden;
 
+  /* Light theme glass background (slightly darker) */
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark .minecraft-glass {
+  /* Dark theme glass background (slightly lighter) */
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.minecraft-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark .minecraft-glass::before {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+.light .minecraft-glass::before {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.06),
+    rgba(0, 0, 0, 0.06) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
