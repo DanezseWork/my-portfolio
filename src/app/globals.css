@@ -194,6 +194,7 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 }
 
 html,
-body {
-  cursor: none;
+body,
+* {
+  cursor: none !important;
 }
