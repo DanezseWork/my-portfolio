@@ -192,3 +192,8 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
     transparent 8px
   );
 }
+
+html,
+body {
+  cursor: none;
+}

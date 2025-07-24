@@ -37,8 +37,8 @@ const Preloader = () => {
         />
       ))}
 
-      <p className="name-text flex text-[20vw] lg:text-[200px] font-anton text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 leading-none overflow-hidden text-[color:var(--text-color)]">
-        {'BY DAN'.split('').map((char, idx) => (
+      <p className="name-text font-black flex text-[20vw] lg:text-[200px] font-anton text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 leading-none overflow-hidden text-[color:var(--text-color)]">
+        {'DAN'.split('').map((char, idx) => (
           <span key={idx} className="inline-block translate-y-full">
             {char === ' ' ? '\u00A0' : char}
           </span>

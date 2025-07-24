@@ -9,6 +9,7 @@ import "./globals.css";
 import TechLinesBackground from "@/components/TechLinesBackground";
 import ParticlesWrapper from "@/components/ParticlesWrapper"; 
 import PreloaderWrapper from "@/components/PreloaderWrapper";
+import CustomCursor from "@/components/CustomCursor";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -60,13 +61,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "relative min-h-screen bg-background font-sans antialiased overflow-x-hidden",
+          "relative min-h-screen bg-background font-sans antialiased overflow-x-hidden cursor-none",
           fontSans.variable
         )}
       >
         {/* <TechLinesBackground /> */}
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
+            <CustomCursor />
             <PreloaderWrapper />
             <ParticlesWrapper />
             {children}

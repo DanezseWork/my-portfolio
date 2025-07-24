@@ -12,6 +12,7 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 
 import { useEffect, useState } from "react";
+import Skills from "@/components/Skills";
 
 const styledDescription = DATA.description
   .replace(
@@ -140,11 +141,12 @@ useEffect(() => {
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
           <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
+            {/* {DATA.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
                 <Badge key={skill}>{skill}</Badge>
               </BlurFade>
-            ))}
+            ))} */}
+            <Skills />
           </div>
         </div>
       </section>
