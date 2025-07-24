@@ -68,7 +68,7 @@ export default function RootLayout({
         {/* <TechLinesBackground /> */}
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
-            <CustomCursor />
+            {/* <CustomCursor /> */}
             <PreloaderWrapper />
             <ParticlesWrapper />
             {children}

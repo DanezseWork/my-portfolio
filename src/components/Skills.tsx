@@ -83,7 +83,6 @@ const Skills = () => {
                                                 alt={item.name}
                                                 width="30"
                                                 height="30"
-                                                className="max-h-10"
                                             />
                                         </div>
                                         <span className="text-md capitalize">

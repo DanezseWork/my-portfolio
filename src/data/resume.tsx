@@ -632,10 +632,10 @@ export const MY_STACK = {
             name: 'Next.js',
             icon: '/logo/next.png',
         },
-        {
-            name: 'Redux',
-            icon: '/logo/redux.png',
-        },
+        // {
+        //     name: 'Redux',
+        //     icon: '/logo/redux.png',
+        // },
         {
             name: 'Tailwind CSS',
             icon: '/logo/tailwind.png',
@@ -648,10 +648,10 @@ export const MY_STACK = {
             name: 'Frammer Motion',
             icon: '/logo/framer-motion.png',
         },
-        {
-            name: 'SASS',
-            icon: '/logo/sass.png',
-        },
+        // {
+        //     name: 'SASS',
+        //     icon: '/logo/sass.png',
+        // },
         {
             name: 'Bootstrap',
             icon: '/logo/bootstrap.svg',
@@ -662,13 +662,21 @@ export const MY_STACK = {
             name: 'Node.js',
             icon: '/logo/node.png',
         },
-        {
-            name: 'Nest.js',
-            icon: '/logo/nest.svg',
+        // {
+        //     name: 'Nest.js',
+        //     icon: '/logo/nest.svg',
+        // },
+        // {
+        //     name: 'Express.js',
+        //     icon: '/logo/express.png',
+        // },
+         {
+            name: 'Laravel',
+            icon: '/logo/laravel.png',
         },
-        {
-            name: 'Express.js',
-            icon: '/logo/express.png',
+         {
+            name: 'PHP',
+            icon: '/logo/php.png',
         },
     ],
     database: [
@@ -677,30 +685,42 @@ export const MY_STACK = {
             icon: '/logo/mysql.svg',
         },
         {
-            name: 'PostgreSQL',
-            icon: '/logo/postgreSQL.png',
+            name: 'SQLite',
+            icon: '/logo/sqlite.png',
         },
-        {
-            name: 'MongoDB',
-            icon: '/logo/mongodb.svg',
+         {
+            name: 'Firebase',
+            icon: '/logo/firebase.png',
         },
-        {
-            name: 'Prisma',
-            icon: '/logo/prisma.png',
-        },
+        // {
+        //     name: 'PostgreSQL',
+        //     icon: '/logo/postgreSQL.png',
+        // },
+        // {
+        //     name: 'MongoDB',
+        //     icon: '/logo/mongodb.svg',
+        // },
+        // {
+        //     name: 'Prisma',
+        //     icon: '/logo/prisma.png',
+        // },
     ],
     tools: [
         {
             name: 'Git',
             icon: '/logo/git.png',
         },
-        {
-            name: 'Docker',
-            icon: '/logo/docker.svg',
-        },
-        {
-            name: 'AWS',
-            icon: '/logo/aws.png',
+        // {
+        //     name: 'Docker',
+        //     icon: '/logo/docker.svg',
+        // },
+        // {
+        //     name: 'AWS',
+        //     icon: '/logo/aws.png',
+        // },
+         {
+            name: 'WordPress',
+            icon: '/logo/wordpress.png',
         },
     ],
 };
