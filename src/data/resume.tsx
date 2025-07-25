@@ -8,7 +8,7 @@ export const DATA = {
   location: "Mabalacat, Pampanga, Philippines",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Frontend Developer skilled in building responsive UIs and integrating with Laravel-based systems.",
+    "I build fast, beautiful web experiences with React, Next.js, Tailwind, and Laravel. From crisp UI animations to backend integration — I bridge design and logic to ship polished, scalable products.",
   summary:
     "Frontend web developer skilled in React, Tailwind CSS, and Laravel. I build responsive, user-focused interfaces for apps like food delivery, employee management, and task tracking. Strong in clean UI, collaboration with backend teams, and improving performance and usability.",
   avatarUrl: "/me.png",
