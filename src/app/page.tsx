@@ -114,7 +114,7 @@ useEffect(() => {
                 className="text-neutral-700 text-base"
               /> */}
 <TextScramble
-  className="text-neutral-700 text-base"
+  className="text-neutral-500 text-base"
   duration={3}
   speed={0.04}
   delay={1.5}
