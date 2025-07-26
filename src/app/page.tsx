@@ -10,10 +10,11 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-
-import { useEffect, useState } from "react";
+import Typewriter from 'typewriter-effect';
+import { useEffect, useMemo, useState } from "react";
 import Skills from "@/components/Skills";
 import { ContactForm } from "@/components/ContactForm";
+import { TextScramble } from "@/components/ui/text-scramble";
 
 const styledDescription = DATA.description
   .replace(
@@ -31,8 +32,50 @@ const styledDescription = DATA.description
 
 const BLUR_FADE_DELAY = 0.04;
 
-export default function Page() {
+const MyTypewriter = () => {
+  const [done, setDone] = useState(false);
+  const [init, setInit] = useState(false); // controls when to mount <Typewriter>
+  const finalText = "Hi, I'm Daniel";
 
+  useEffect(() => {
+    // Delay mounting Typewriter to prevent initial text flash
+    const timeout = setTimeout(() => {
+      setInit(true);
+    }, 1500); // small delay is enough
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return (
+    <>
+      {done ? (
+        <>{finalText}</>
+      ) : init ? (
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .deleteAll(1) // ensure it starts empty
+              .typeString(finalText)
+              .pauseFor(1000)
+              .callFunction(() => setDone(true))
+              .start();
+          }}
+          options={{
+            autoStart: false, // we'll call .start() manually
+            loop: false,
+            delay: 100,
+            cursor: '|',
+          }}
+        />
+      ) : (
+        <span>&nbsp;</span> // empty placeholder while waiting
+      )}
+    </>
+  );
+};
+
+
+
+export default function Page() {
 // inside your Page() function:
 const [showEmoji, setShowEmoji] = useState(false);
 
@@ -49,12 +92,15 @@ useEffect(() => {
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <div className="flex items-center gap-2">
-                <BlurFadeText
+                {/* <BlurFadeText
                   delay={BLUR_FADE_DELAY}
                   className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                   yOffset={8}
                   text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
-                />
+                /> */}
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                 <MyTypewriter />
+                </h1>
                 {showEmoji && (
                   <span
                     className="inline-block text-5xl leading-none animate-wave origin-[70%_70%]"
@@ -63,10 +109,18 @@ useEffect(() => {
                   </span>
                 )}
               </div>
-              <BlurFadeText
+              {/* <BlurFadeText
                 html={styledDescription}
                 className="text-neutral-700 text-base"
-              />
+              /> */}
+<TextScramble
+  className="text-neutral-700 text-base"
+  duration={3}
+  speed={0.04}
+  delay={1.5}
+>
+  {styledDescription}
+</TextScramble>
 
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
