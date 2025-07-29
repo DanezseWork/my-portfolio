@@ -15,6 +15,9 @@ import { useEffect, useMemo, useState } from "react";
 import Skills from "@/components/Skills";
 import { ContactForm } from "@/components/ContactForm";
 import { TextScramble } from "@/components/ui/text-scramble";
+import WorkTimeline from "@/components/WorkTimeline";
+import Timeline from "@/components/EducationTimeline";
+import EducationTimeline from "@/components/EducationTimeline";
 
 const styledDescription = DATA.description
   .replace(
@@ -129,7 +132,7 @@ useEffect(() => {
           </Markdown>
         </BlurFade>
       </section>
-      <section id="work" className=" min-h-[100vh] flex items-center">
+      {/* <section id="work" className=" min-h-[100vh] flex items-center">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
             <h2 className="text-3xl font-bold pb-3">Work</h2>
@@ -153,7 +156,8 @@ useEffect(() => {
             </BlurFade>
           ))}
         </div>
-      </section>
+      </section> */}
+      <WorkTimeline />
       <section id="skills" className=" min-h-[100vh] flex items-center">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -164,7 +168,7 @@ useEffect(() => {
           </div>
         </div>
       </section>
-      <section id="education" className="min-h-[100vh] flex items-center">
+      {/* <section id="education" className="min-h-[100vh] flex items-center">
         <div className="flex min-h-0 flex-col gap-y-3 w-full">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <h2 className="text-3xl font-bold pb-3">Education</h2>
@@ -186,11 +190,12 @@ useEffect(() => {
             </BlurFade>
           ))}
         </div>
-      </section>
+      </section> */}
+      <EducationTimeline />
       <section id="contact" className="min-h-[100vh] flex items-center">
-        <div className="flex min-h-0 flex-col gap-y-3 w-full">
+        <div className="flex min-h-0 flex-col gap-y-3 w-full text-center">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-3xl font-bold pb-3">Contact</h2>
+            <h2 className="text-3xl font-bold pb-3">Contact Me</h2>
           </BlurFade>
           <ContactForm />
         </div>
