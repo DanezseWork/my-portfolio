@@ -90,7 +90,7 @@ useEffect(() => {
     <main className="flex flex-col min-h-[100dvh] max-w-[700px] px-10 mx-auto space-y-10 minecraft-glass">
       <section id="hero" className="min-h-[100vh] flex items-center">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
+          <div className="gap-2 flex flex-col-reverse items-center md:flex-row md:justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <div className="flex items-center gap-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
@@ -114,7 +114,7 @@ useEffect(() => {
               </TextScramble>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
+              <Avatar className="size-[300px] md:size-28 border mb-5 md:mb-0">
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
