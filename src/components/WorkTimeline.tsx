@@ -56,7 +56,9 @@ const WorkTimeline = () => {
 
   return (
     <section id="work" className="min-h-[100vh] py-16 px-4">
-      <h2 className="text-3xl font-bold pb-10 text-center">Work</h2>
+      <h2 className="text-3xl font-bold pb-10 text-center">
+        Work 🧑‍💻
+      </h2>
       <div className="relative mx-auto max-w-5xl" ref={containerRef}>
         <div
             ref={lineRef}
