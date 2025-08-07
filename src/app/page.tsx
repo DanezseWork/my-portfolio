@@ -19,6 +19,12 @@ import WorkTimeline from "@/components/WorkTimeline";
 import EducationTimeline from "@/components/EducationTimeline";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import FaultyTerminal from "@/components/FaultyTerminal";
+import FuzzyText from "@/components/FuzzyText";
+import TextPressure from "@/components/TextPressure";
+import TextType from "@/components/TextType";
+import Squares from "@/components/Squares";
+import ScrollVelocity from "@/components/ScrollVelocity";
 
 const styledDescription = DATA.description
   .replace(
@@ -96,9 +102,10 @@ useEffect(() => {
 }, []);
 
   return (
-    <main className="flex flex-col min-h-[100dvh] max-w-[700px] px-10 mx-auto space-y-10 minecraft-glass">
+    <main className="flex flex-col space-y-10">
+
       <section id="hero" className="min-h-[100vh] flex items-center">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
+         {/* <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex flex-col-reverse items-center md:flex-row md:justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <div className="flex items-center gap-2">
@@ -129,20 +136,96 @@ useEffect(() => {
               </Avatar>
             </BlurFade>
           </div>
+        </div>  */}
+        {/* Foreground text */}
+        <div className="flex justify-between w-full max-w-[1000px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fixed z-[-1]">
+          <div className="flex flex-col justify-start">
+            <FuzzyText 
+              baseIntensity={0.2} 
+              hoverIntensity={0.5} 
+              enableHover={true}
+              fontSize={200}
+            >
+              Daniel
+            </FuzzyText>
+            <div className="pl-5 max-w-[450px]">
+              <TextPressure
+              text="FRONTEND DEVELOPER"
+              flex={true}
+              alpha={false}
+              stroke={false}
+              width={true}
+              weight={true}
+              italic={true}
+              textColor="#ffffff"
+              strokeColor="#ff0000"
+              minFontSize={30}
+            />
+
+            </div>
+            
+          </div>
+          <BlurFade delay={BLUR_FADE_DELAY}>
+            <Avatar className="size-[300px] md:size-100 border mb-5 md:mb-0">
+              <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+              <AvatarFallback>{DATA.initials}</AvatarFallback>
+            </Avatar>
+          </BlurFade>
+        </div>
+        <div className="fixed inset-0 z-[-2]">
+          <FaultyTerminal
+            scale={2}
+            gridMul={[2, 1]}
+            digitSize={2}
+            timeScale={1}
+            pause={false}
+            scanlineIntensity={1}
+            glitchAmount={1}
+            flickerAmount={1}
+            noiseAmp={1}
+            chromaticAberration={0}
+            dither={0}
+            curvature={0.1}
+            tint="#ffffff"
+            mouseReact={true}
+            mouseStrength={0.5}
+            pageLoadAnimation={true}
+            brightness={.3}
+          />
         </div>
       </section>
-      <section id="about" className=" min-h-[100vh] flex flex-col justify-center">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 id="about-heading" className="text-3xl font-bold pb-3">
-            About Me <span role="img" aria-label="document">🧾</span>
-          </h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            {DATA.summary}
-          </Markdown>
-        </BlurFade>
-      </section>
+<section id="about" className="relative min-h-[100vh] flex flex-col overflow-hidden bg-black">
+  {/* SQUARE BACKGROUND */}
+  <div className="absolute inset-0 opacity-80">
+    <Squares 
+      speed={0.5} 
+      squareSize={40}
+      direction="diagonal"
+      borderColor="#fff"
+      hoverFillColor="#fff"
+    />
+  </div>
+  <ScrollVelocity
+    texts={['Welcome To', 'My Portfolio']} 
+      velocity={100} 
+      className="bg-black"
+    />
+  {/* CONTENT */}
+  <div className="min-h-[100vh] items-center flex flex-col text-center justify-center">
+  <BlurFade delay={BLUR_FADE_DELAY * 3}>
+    <h2 id="about-heading" className="text-3xl font-bold pb-3">
+      About Me <span role="img" aria-label="document">🧾</span>
+    </h2>
+  </BlurFade>
+
+  <BlurFade delay={BLUR_FADE_DELAY * 4}>
+    <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+      {DATA.summary}
+    </Markdown>
+  </BlurFade>
+  </div>
+
+</section>
       <WorkTimeline />
       <section id="skills" className=" min-h-[100vh] flex items-center">
         <div className="flex min-h-0 flex-col gap-y-3">

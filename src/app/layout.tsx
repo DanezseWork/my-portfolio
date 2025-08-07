@@ -70,9 +70,9 @@ export default function RootLayout({
           <TooltipProvider delayDuration={0}>
             {/* <CustomCursor /> */}
             <PreloaderWrapper />
-            <ParticlesWrapper />
+            {/* <ParticlesWrapper /> */}
             {children}
-            <Navbar />
+            {/* <Navbar /> */}
           </TooltipProvider>
 
         </ThemeProvider>
