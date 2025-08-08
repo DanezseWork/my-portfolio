@@ -1,4 +1,3 @@
-import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
@@ -6,10 +5,7 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import TechLinesBackground from "@/components/TechLinesBackground";
-import ParticlesWrapper from "@/components/ParticlesWrapper"; 
 import PreloaderWrapper from "@/components/PreloaderWrapper";
-import CustomCursor from "@/components/CustomCursor";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -68,14 +64,11 @@ export default function RootLayout({
         {/* <TechLinesBackground /> */}
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
-            {/* <CustomCursor /> */}
+              {children}
             <PreloaderWrapper />
-            {/* <ParticlesWrapper /> */}
-            {children}
-            {/* <Navbar /> */}
           </TooltipProvider>
-
         </ThemeProvider>
+
            
       </body>
    

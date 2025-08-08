@@ -35,14 +35,11 @@ const Squares: React.FC<SquaresProps> = ({
     const ctx = canvas.getContext("2d");
 
     const resizeCanvas = () => {
-  const width = canvas.offsetWidth;
-  const height = canvas.offsetHeight;
-  canvas.width = width;
-  canvas.height = height;
-  numSquaresX.current = Math.ceil(width / squareSize) + 1;
-  numSquaresY.current = Math.ceil(height / squareSize) + 1;
-};
-
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      numSquaresX.current = Math.ceil(canvas.width / squareSize) + 1;
+      numSquaresY.current = Math.ceil(canvas.height / squareSize) + 1;
+    };
 
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();

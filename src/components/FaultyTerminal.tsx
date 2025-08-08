@@ -269,8 +269,8 @@ export default function FaultyTerminal({
   style,
   ...rest
 }: FaultyTerminalProps) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const programRef = useRef<Program | null>(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const programRef = useRef<Program | null>(null);
   const rendererRef = useRef<Renderer | null>(null);
   const mouseRef = useRef({ x: 0.5, y: 0.5 });
   const smoothMouseRef = useRef({ x: 0.5, y: 0.5 });

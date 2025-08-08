@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-
+import ScrollFloat from "./ScrollFloat";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,10 +55,17 @@ const WorkTimeline = () => {
   }, []);
 
   return (
-    <section id="work" className="min-h-[100vh] py-16 px-4">
-      <h2 className="text-3xl font-bold pb-10 text-center">
-        Work 🧑‍💻
-      </h2>
+    <section id="work" className="min-h-[100vh] py-16 px-4 flex flex-col items-center">
+      <ScrollFloat
+        animationDuration={1}
+        ease='back.inOut(2)'
+        scrollStart='top bottom+=10%'
+        scrollEnd='bottom bottom-=40%'
+        stagger={0.03}
+        textClassName="text-2xl font-bold"
+      >
+        Work  <span role="img" aria-label="emoji">🧑‍💻</span>
+      </ScrollFloat>
       <div className="relative mx-auto max-w-5xl" ref={containerRef}>
         <div
             ref={lineRef}
