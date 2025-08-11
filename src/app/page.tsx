@@ -207,11 +207,18 @@ useEffect(() => {
 
         <WorkTimeline />
 
-        <section id="skills" className=" min-h-[100vh] flex justify-center">
+        <section id="skills" className=" min-h-[100vh] flex flex-col justify-center items-center">
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='top bottom+=10%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            textClassName="text-2xl font-bold"
+          >
+          Skills <span role="img" aria-label="document">✨</span>
+          </ScrollFloat>
           <div className="flex min-h-0 flex-col gap-y-3">
-            <BlurFade delay={BLUR_FADE_DELAY * 9}>
-              <h2 className="text-3xl font-bold pb-3">Skills ✨</h2>
-            </BlurFade>
             <div className="flex flex-wrap gap-1">
               <Skills />
             </div>
@@ -229,9 +236,16 @@ useEffect(() => {
 
       <section id="contact" className="min-h-[100vh] flex items-center bg-black !mt-0">
         <div className="flex min-h-0 flex-col gap-y-3 w-full text-center">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-3xl font-bold pb-3">Contact Me ✉️</h2>
-          </BlurFade>
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='top bottom+=10%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            textClassName="text-2xl font-bold"
+          >
+            Contact Me <span role="img" aria-label="document">✉️</span>
+          </ScrollFloat>
           <ContactForm />
         </div>
       </section>

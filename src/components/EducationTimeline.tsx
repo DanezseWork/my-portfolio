@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import ScrollFloat from "./ScrollFloat";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -55,8 +56,17 @@ const EducationTimeline = () => {
   }, []);
 
   return (
-    <section id="education" className="min-h-[100vh] py-16 px-4">
-      <h2 className="text-3xl font-bold pb-10 text-center">Education 🎓</h2>
+    <section id="education" className="min-h-[100vh] py-16 px-4 flex flex-col items-center">
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='top bottom+=10%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            textClassName="text-2xl font-bold"
+          >
+          Education <span role="img" aria-label="document">🎓</span>
+          </ScrollFloat>
       <div className="relative mx-auto max-w-5xl" ref={containerRef}>
         <div
           ref={lineRef}
