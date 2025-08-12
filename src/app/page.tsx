@@ -28,6 +28,9 @@ import ScrollVelocity from "@/components/ScrollVelocity";
 import ScrollFloat from "@/components/ScrollFloat";
 import ScrollReveal from "@/components/ScrollReveal";
 import SquaresWrapper from "@/components/SquaresWrapper";
+import RippleGrid from "@/components/RippleGrid";
+import { Contact } from "lucide-react";
+import MyContactSection from "@/components/ContactSection";
 
 const styledDescription = DATA.description
   .replace(
@@ -234,8 +237,9 @@ useEffect(() => {
         />
       </div>
 
-      <section id="contact" className="min-h-[100vh] flex items-center bg-black !mt-0">
-        <div className="flex min-h-0 flex-col gap-y-3 w-full text-center">
+      <MyContactSection />
+      {/* <section id="contact" className="min-h-[100vh] flex items-center bg-black !mt-0">
+        <div className="flex min-h-0 flex-col gap-y-3 w-full text-center relative">
           <ScrollFloat
             animationDuration={1}
             ease='back.inOut(2)'
@@ -246,9 +250,19 @@ useEffect(() => {
           >
             Contact Me <span role="img" aria-label="document">✉️</span>
           </ScrollFloat>
-          <ContactForm />
+          <ContactForm/>
+            <RippleGrid
+              enableRainbow={false}
+              gridColor="#ffffff"
+              rippleIntensity={0.05}
+              gridSize={10}
+              gridThickness={15}
+              mouseInteraction={true}
+              mouseInteractionRadius={1.2}
+              opacity={0.8}
+            />
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

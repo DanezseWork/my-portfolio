@@ -1,12 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 
-export function ContactForm() {
+type ContactFormProps = {
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+};
+
+export function ContactForm({ onMouseEnter, onMouseLeave }: ContactFormProps) {
+  const formProps: HTMLAttributes<HTMLFormElement> = {};
+  if (onMouseEnter) {
+    formProps.onMouseEnter = onMouseEnter;
+  }
+  if (onMouseLeave) {
+    formProps.onMouseLeave = onMouseLeave;
+  }
+
   return (
-    <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border space-y-4">
+    <CardContainer className="inter-var ">
+      <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border space-y-4 !z-10" {...formProps}>
         <form
           action="https://formspree.io/f/xdkdgagj"
           method="POST"
