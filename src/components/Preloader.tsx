@@ -29,7 +29,7 @@ const Preloader = () => {
   }, { scope: preloaderRef });
 
   return (
-    <div ref={preloaderRef} className="fixed inset-0 z-[6] flex">
+    <div ref={preloaderRef} className="fixed inset-0 z-[100] flex">
       {Array.from({ length: 10 }).map((_, i) => (
         <div
           key={i}

@@ -19,7 +19,7 @@ export function ContactForm({ onMouseEnter, onMouseLeave }: ContactFormProps) {
 
   return (
     <CardContainer className="inter-var ">
-      <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border space-y-4 !z-10" {...formProps}>
+      <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border space-y-4 mt-5" {...formProps}>
         <form
           action="https://formspree.io/f/xdkdgagj"
           method="POST"
@@ -30,7 +30,7 @@ export function ContactForm({ onMouseEnter, onMouseLeave }: ContactFormProps) {
             translateZ="60"
             as="input"
             className="w-full p-2 rounded-lg bg-white dark:bg-neutral-800 border dark:border-neutral-700 text-sm text-black dark:text-white"
-            placeholder="Your Name"
+            placeholder="Name"
             name="name"
             required
             />
@@ -40,7 +40,7 @@ export function ContactForm({ onMouseEnter, onMouseLeave }: ContactFormProps) {
             as="input"
             type="email"
             className="w-full p-2 rounded-lg bg-white dark:bg-neutral-800 border dark:border-neutral-700 text-sm text-black dark:text-white"
-            placeholder="Your Email"
+            placeholder="Email"
             name="email"
             required
             />
@@ -49,7 +49,7 @@ export function ContactForm({ onMouseEnter, onMouseLeave }: ContactFormProps) {
             translateZ="60"
             as="textarea"
             className="w-full p-2 h-32 rounded-lg bg-white dark:bg-neutral-800 border dark:border-neutral-700 text-sm text-black dark:text-white resize-none"
-            placeholder="Your Message"
+            placeholder="Message"
             name="message"
             required
             />

@@ -178,24 +178,36 @@ useEffect(() => {
         </div>
 
         <section id="about" className="relative min-h-[100vh] flex flex-col overflow-hidden">
-          <ScrollVelocity
+          {/* <ScrollVelocity
             texts={['Welcome To', 'My Portfolio']} 
               velocity={100} 
               className="bg-black"
-            />
+            /> */}
           {/* CONTENT */}
           <div className="min-h-[100vh] items-center flex flex-col text-center justify-center">
-          <ScrollFloat
-            animationDuration={1}
-            ease='back.inOut(2)'
-            scrollStart='top bottom+=10%'
-            scrollEnd='bottom bottom-=40%'
-            stagger={0.03}
-            textClassName="text-2xl font-bold"
-          >
-            About Me <span role="img" aria-label="document">🧾</span>
-          </ScrollFloat>
-
+            <div className="flex gap-5">
+              <ScrollFloat
+                animationDuration={1}
+                ease='back.inOut(2)'
+                scrollStart='top bottom+=10%'
+                scrollEnd='bottom bottom-=40%'
+                stagger={0.03}
+                textClassName="text-2xl font-bold"
+              >
+                About Me
+              </ScrollFloat>
+              <ScrollFloat
+                animationDuration={1}
+                ease='back.inOut(2)'
+                scrollStart='top bottom+=40%'
+                scrollEnd='bottom bottom-=80%'
+                stagger={0.03}
+                textClassName="text-2xl font-bold"
+              >
+                <span role="img" aria-label="document">🧾</span>
+              </ScrollFloat>
+            </div>
+          
         <ScrollReveal
           baseOpacity={0}
           enableBlur={true}
@@ -211,16 +223,28 @@ useEffect(() => {
         <WorkTimeline />
 
         <section id="skills" className=" min-h-[100vh] flex flex-col justify-center items-center">
-          <ScrollFloat
-            animationDuration={1}
-            ease='back.inOut(2)'
-            scrollStart='top bottom+=10%'
-            scrollEnd='bottom bottom-=40%'
-            stagger={0.03}
-            textClassName="text-2xl font-bold"
-          >
-          Skills <span role="img" aria-label="document">✨</span>
-          </ScrollFloat>
+          <div className="flex gap-5">
+            <ScrollFloat
+              animationDuration={1}
+              ease='back.inOut(2)'
+              scrollStart='top bottom+=10%'
+              scrollEnd='bottom bottom-=40%'
+              stagger={0.03}
+              textClassName="text-2xl font-bold"
+            >
+              Skills
+            </ScrollFloat>
+            <ScrollFloat
+              animationDuration={1}
+              ease='back.inOut(2)'
+              scrollStart='top bottom+=40%'
+              scrollEnd='bottom bottom-=80%'
+              stagger={0.03}
+              textClassName="text-2xl font-bold"
+            >
+              <span role="img" aria-label="document">✨</span>
+            </ScrollFloat>
+          </div>
           <div className="flex min-h-0 flex-col gap-y-3">
             <div className="flex flex-wrap gap-1">
               <Skills />
@@ -229,12 +253,12 @@ useEffect(() => {
         </section>
 
         <EducationTimeline />
-
+{/* 
         <ScrollVelocity
           texts={['Reach Out', 'Contact Me']} 
           velocity={100} 
           className="bg-black"
-        />
+        /> */}
       </div>
 
       <MyContactSection />

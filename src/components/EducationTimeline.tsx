@@ -57,16 +57,28 @@ const EducationTimeline = () => {
 
   return (
     <section id="education" className="min-h-[100vh] py-16 px-4 flex flex-col items-center">
-          <ScrollFloat
-            animationDuration={1}
-            ease='back.inOut(2)'
-            scrollStart='top bottom+=10%'
-            scrollEnd='bottom bottom-=40%'
-            stagger={0.03}
-            textClassName="text-2xl font-bold"
-          >
-          Education <span role="img" aria-label="document">🎓</span>
-          </ScrollFloat>
+      <div className="flex gap-5">
+        <ScrollFloat
+          animationDuration={1}
+          ease='back.inOut(2)'
+          scrollStart='top bottom+=10%'
+          scrollEnd='bottom bottom-=40%'
+          stagger={0.03}
+          textClassName="text-2xl font-bold"
+        >
+        Education
+        </ScrollFloat>
+        <ScrollFloat
+          animationDuration={1}
+          ease='back.inOut(2)'
+          scrollStart='top bottom+=40%'
+          scrollEnd='bottom bottom-=80%'
+          stagger={0.03}
+          textClassName="text-2xl font-bold"
+        >
+          <span role="img" aria-label="document">🎓</span>
+        </ScrollFloat>
+      </div>    
       <div className="relative mx-auto max-w-5xl" ref={containerRef}>
         <div
           ref={lineRef}
@@ -86,7 +98,7 @@ const EducationTimeline = () => {
 
               <div
                 className={cn(
-                  "bg-white dark:bg-zinc-900 p-4 rounded-xl shadow-md border border-muted w-full ml-5 md:ml-0 md:w-1/2",
+                  "bg-white dark:bg-zinc-900 p-4 rounded-xl shadow-md border border-muted ml-5 md:ml-0 md:w-1/2",
                   index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
                 )}
               >
