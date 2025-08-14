@@ -1,141 +1,71 @@
 'use client';
+
 import SectionTitle from '@/components/SectionTitle';
 import { MY_STACK } from '@/data/resume';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import { Marquee } from '@/components/ui/marquee';
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React from 'react';
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+const Skills: React.FC = () => {
+  // Flatten the MY_STACK data into a single array of all skills
+  const allSkills = Object.values(MY_STACK).flat();
 
-const Skills = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
+  // Split skills into two halves
+  const middleIndex = Math.ceil(allSkills.length / 2);
+  const firstHalf = allSkills.slice(0, middleIndex);
+  const secondHalf = allSkills.slice(middleIndex);
 
-    useGSAP(
-        () => {
-            const slideUpEl =
-                containerRef.current?.querySelectorAll('.slide-up');
+  return (
+    <section id="my-stack">
+      <div className="container">
+        {/* <SectionTitle title="My Stack" /> */}
 
-            if (!slideUpEl?.length) return;
+        <div className="py-20 space-y-8">
+          {/* First row - Left direction */}
+          <Marquee speed="slow" pauseOnHover direction="left">
+            {firstHalf.map((item, index) => (
+              <div
+                key={`first-${index}`}
+                className="flex items-center gap-3.5 leading-none w-fit px-5"
+              >
+                <Image
+                  src={item.icon}
+                  alt={item.name}
+                  width={40}
+                  height={40}
+                  className="h-10 object-contain"
+                />
+                <span className="text-2xl capitalize whitespace-nowrap">
+                  {item.name}
+                </span>
+              </div>
+            ))}
+          </Marquee>
 
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'top 80%',
-                    end: 'bottom 80%',
-                    scrub: 0.5,
-                },
-            });
-
-            tl.from('.slide-up', {
-                opacity: 0,
-                y: 40,
-                ease: 'none',
-                stagger: 0.4,
-            });
-        },
-        { scope: containerRef },
-    );
-
-    useGSAP(
-        () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'bottom 50%',
-                    end: 'bottom 10%',
-                    scrub: 1,
-                },
-            });
-
-            tl.to(containerRef.current, {
-                y: -150,
-                opacity: 0,
-            });
-        },
-        { scope: containerRef },
-    );
-
-    return (
-        <section id="my-stack" ref={containerRef}>
-            {/* <div className=""> */}
-                {/* <SectionTitle title="My Stack" /> */}
-
-                <div className="space-y-20">
-                    {Object.entries(MY_STACK).map(([key, value]) => (
-                        <div className="grid sm:grid-cols-12" key={key}>
-                            <div className="sm:col-span-12 pb-5">
-                                <p className="slide-up text-md font-anton leading-none text-muted-foreground uppercase">
-                                    {key}
-                                </p>
-                            </div>
-
-                            <div className="sm:col-span-12 flex gap-x-11 gap-y-9 flex-wrap">
-                                {value.map((item) => (
-                                    <div
-                                        className="slide-up flex gap-3.5 items-center leading-none"
-                                        key={item.name}
-                                    >
-                                        <div>
-                                            <Image
-                                                src={item.icon}
-                                                alt={item.name}
-                                                width="30"
-                                                height="30"
-                                            />
-                                        </div>
-                                        <span className="text-md capitalize">
-                                            {item.name}
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            {/* </div> */}
-        </section>
-    );
-
-    return (
-        <section id="my-stack" ref={containerRef}>
-            <div className="container">
-                <SectionTitle title="My Stack" />
-
-                <div className="space-y-20">
-                    {Object.entries(MY_STACK).map(([key, value]) => (
-                        <div className="grid sm:grid-cols-12" key={key}>
-                            <div className="sm:col-span-5">
-                                <p className="slide-up text-5xl font-anton leading-none text-muted-foreground uppercase">
-                                    {key}
-                                </p>
-                            </div>
-                            <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
-                                {value.map((item) => (
-                                    <div
-                                        className="slide-up flex gap-3.5 items-center leading-none"
-                                        key={item.name}
-                                    >
-                                        <Image
-                                            src={item.icon}
-                                            alt={item.name}
-                                            width="40"
-                                            height="40"
-                                            className="h-10"
-                                        />
-                                        <span className="text-2xl capitalize">
-                                            {item.name}
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+          {/* Second row - Right direction */}
+          <Marquee speed="slow" pauseOnHover direction="right">
+            {secondHalf.map((item, index) => (
+              <div
+                key={`second-${index}`}
+                className="flex items-center gap-3.5 leading-none w-fit mr-10"
+              >
+                <Image
+                  src={item.icon}
+                  alt={item.name}
+                  width={40}
+                  height={40}
+                  className="h-10 object-contain"
+                />
+                <span className="text-2xl capitalize whitespace-nowrap">
+                  {item.name}
+                </span>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Skills;
